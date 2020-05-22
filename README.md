@@ -10,28 +10,6 @@ Windows：
 
 ---
 ## 项目结构
-- bert_base
-    - bert （Google发布的BERT源码）
-    - chinese_L-12_H-768_A-12   （BERT模型）
-- data
-    - dataset   （用于训练的最终数据集）
-    - sample_files  （示例代码中用到的文件）
-- other
-    - pictures  （README中用到的图片）
-    - predict_base.py   （分词的基础代码）
-    - preprocessing.py  （预处理的代码，主要用于生成用于训练的最终训练集）
-- output    （存放训练的模型、log以及中间文件）
-- train     （网络结构、计算准确率、超参数指定）
-    - bert_lstm_ner.py  
-    - conlleval.py
-    - helper.py
-    - lstm_crf_layer.py
-    - models.py
-    - tf.metrics.py
-- predict.py    （示例分词文件）
-- README.md
-- train.py  （示例训练文件）
-
 
 ---
 
