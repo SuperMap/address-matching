@@ -9,20 +9,46 @@ Windows：
 - 安装必须的package
 
 ---
+## 项目结构
+- bert_base
+    - bert （Google发布的BERT源码）
+    - chinese_L-12_H-768_A-12   （BERT模型）
+- data
+    - dataset   （用于训练的最终数据集）
+    - sample_files  （示例代码中用到的文件）
+- other
+    - pictures  （README中用到的图片）
+    - predict_base.py   （分词的基础代码）
+    - preprocessing.py  （预处理的代码，主要用于生成用于训练的最终训练集）
+- output    （存放训练的模型、log以及中间文件）
+- train     （网络结构、计算准确率、超参数指定）
+    - bert_lstm_ner.py  
+    - conlleval.py
+    - helper.py
+    - lstm_crf_layer.py
+    - models.py
+    - tf.metrics.py
+- predict.py    （示例分词文件）
+- README.md
+- train.py  （示例训练文件）
+
+
+---
+
 ## 如何运行代码，对地址分词
 目前版本支持对单条地址、excel系列文件（xlsx、csv等）进行分词。根目录下的predict.py主方法中有两段代码，可以根据注释提示运行
 - 单条地址分词
     - 直接运行根目录下的predict.py,就可以得到结果,结果如下
-    ![单条地址分词效果](https://github.com/SuperMap/address-matching/tree/master/other/pictures/单条地址分词效果.png)
+    ![单条地址分词效果](./other/pictures/单条地址分词效果.png)
 - 对文件中的所有地址进行分词
     - 注释掉根目录下的predict.py中 *预测单个文件代码块* ，打开 *预测整个文件代码块* ，运行predict.py
 ## 如何使用自己的数据训练模型
 ### 概述
 目前项目版本使用监督学习方法，为了保证标签的准确性，我们挑选了不同省份、不同特色的1000多条手工标注的地址进行模型训练。我们将地址分为如下11个地址要素：
-![地址要素说明](https://github.com/SuperMap/address-matching/tree/master/other/pictures/切分地址要素层级说明.png)
+![地址要素说明](./other/pictures/切分地址要素层级说明.png)
 
 其次按照规定的层级对地址进行打标签操作，如下图：
-![打标签示例](https://github.com/SuperMap/address-matching/tree/master/other/pictures/打标签示例.png)
+![打标签示例](./other/pictures/打标签示例.png)
 
 有了带标签的数据，结合Google发布的BERT预训练语言模型，就可以构建自己的网络，从而训练自己的模型。
 
