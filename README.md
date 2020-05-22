@@ -7,8 +7,27 @@ Windows：
 - ~~Clone代码（目前github只有代码，模型文件太大，为了方便性，暂时不采取这种方式）~~
 - IDE打开（推荐Pycharm）
 - 安装必须的package
-
----
+## 项目结构
+```
+├── address-matching
+    ├── bert_base
+        ├── bert 
+        └── chinese_L-12_H-768_A-12 
+    ├── data
+        ├── dataset 
+            ├── dev.txt
+            ├── test.txt
+            └── train.txt
+        └── sample_files
+    ├── other
+        ├── pictures
+        ├── predict_base.py
+        └── preprocessing.py
+    ├── output
+    ├── train
+    ├── predict.py
+    └── train.py
+```
 ## 如何运行代码，对地址分词
 目前版本支持对单条地址、excel系列文件（xlsx、csv等）进行分词。根目录下的predict.py主方法中有两段代码，可以根据注释提示运行
 - 单条地址分词
