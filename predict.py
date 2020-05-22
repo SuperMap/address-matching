@@ -48,8 +48,10 @@ def predict_file_address(origin_file_path, result_file):
 
 if __name__ == "__main__":
     # 预测单个地址
-    result = predict_address("北京市朝阳区酒仙桥北路甲10号电子城IT产业园107楼6层")
-    print(result)
+    address = "北京市朝阳区酒仙桥北路甲10号电子城IT产业园107楼6层"
+    result = predict_address(address)
+    print('分词地址：', address)
+    print('分词结果：', result)
 
     # 预测整个文件
     # predict_file_address('data/sample_files/展示预测的示例地址文件.csv','data/sample_files/展示预测的示例地址文件结果.csv')
